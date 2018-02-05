@@ -1,12 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var sms = require('./../model/sms');
+var KAVENEGAR_API_KEY = require('./../config/kavenegar');
 var phone = require('node-phonenumber')
 
-var Kavenegar = require('kavenegar');
-var api = Kavenegar.KavenegarApi({
-    apikey: '345271454776727A622B384B53382B323356507233673D3D'
-});
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
@@ -26,7 +23,7 @@ var toNumber = phoneUtil.format(phoneNumber, phone.PhoneNumberFormat.INTERNATION
 var phone_number = toNumber.replace(/ /g,'');
 	console.log(phone_number);
 	
-	/* api.Send({
+	/* KAVENEGAR_API_KEY.Send({
         message :  reqObj.message,
         sender: "10008727",
         receptor: reqObj.phone
@@ -38,7 +35,7 @@ var phone_number = toNumber.replace(/ /g,'');
 	 */
 	 
 	 
- 	api.VerifyLookup({
+ 	KAVENEGAR_API_KEY.VerifyLookup({
 		receptor: phone_number,
 		token: reqObj.message,
 		template: "registerlogin"
