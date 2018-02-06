@@ -16,8 +16,9 @@
     "mongodb": "^3.0.1",
     "mongoose": "^5.0.1",
     "morgan": "~1.9.0",
+    "node-async-router": "0.0.2",
     "node-phonenumber": "^1.0.0",
-    "nodemon": "^1.14.11",
+    "nodemon": "^1.14.12",
     "serve-favicon": "~2.4.5",
     "unix-timestamp": "^0.2.0",
     "validator": "^9.2.0"
